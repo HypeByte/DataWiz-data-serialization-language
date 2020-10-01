@@ -9,7 +9,7 @@ Copyright (c) 2020 HypeByte
 #include<string.h>
 #include<stdbool.h>
 #include<stdlib.h>
-#include "./strSets.h"
+
 
 /*
 -If the function has a C at the start of its name, it is for chars.
@@ -62,8 +62,23 @@ bool SmemberOf(char * value, char  set[]) { //Sees if all the chars of value are
 }
 
 
+bool subString(char * str, char * substr, int s1, int s2) { //Returns true if substr is a substring of str, s1 is the length of str, and s2 is the length of substr
+     
+     char * memSlot = malloc(s2);
 
+     for(int i = 0; i < s1 - s2; i++) {
 
+         for(int n = i; n < i + s2; n++) { 
+             memSlot[n - i] = str[n];
+         } 
 
+         if(strcmp(substr,memSlot) == 0) {
+             free(memSlot);
+             return true;
+         }
 
+     }
 
+    free(memSlot);
+    return false;
+}

@@ -15,3 +15,4 @@ Copyright (c) 2020 HypeByte
 bool CmemberOf(char value, char * set);
 void * intoSet(char * value);
 bool SmemberOf(char * value, char  set[]);
+bool subString(char * str, char * substr, int s1, int s2);
